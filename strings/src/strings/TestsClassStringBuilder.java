@@ -26,6 +26,7 @@ class TestsClassStringBuilder {
 
 	@Test
 	void testReverse() {
+		//[YG] this test should not pass
 		StringBuilder anagram = new StringBuilder("Do Geese see GoD");
 		String exp = "Do Geese see God";
 		assertEquals(exp, anagram.reverse().toString());
