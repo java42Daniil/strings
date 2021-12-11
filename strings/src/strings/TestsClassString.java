@@ -15,6 +15,7 @@ class TestsClassString {
 	void testCharAt() {
 		assertEquals('H', strTest.charAt(0));
 		assertEquals('L', strTest.charAt(3));
+		// V.R. The case strTest.charAt(-4) and strTest.charAt(400) aren't checked
 		}
 
 	@Test
@@ -33,6 +34,8 @@ class TestsClassString {
 	void testStartsWithStringInt() {
 		assertTrue(strTest.startsWith("o ", 4));
 		assertFalse(strTest.startsWith(" W", 7));
+		// V.R. The cases strTest.startsWith("XX", -10) and strTest.startsWith("XX", 100)
+		// aren't checked
 		}
 
 	@Test
@@ -56,12 +59,14 @@ class TestsClassString {
 	@Test
 	void testIndexOfIntInt() {
 		assertEquals(4, strTest.indexOf('o', 3 ));
+		// V.R. The case strTest.indexOf('o', 300 ) is skipped
 		}
 
 	@Test
 	void testLastIndexOfIntInt() {
 		assertEquals(7, strTest.lastIndexOf('o', strTest.length()-1 ));
 		assertEquals(4,  strTest.lastIndexOf('o', 5));	
+		// V.R. The case strTest.lastIndexOf('o', 300 ) is skipped
 		}
 
 	@Test
@@ -79,11 +84,14 @@ class TestsClassString {
 	@Test
 	void testSubstringInt() {
 		assertEquals("WorlD", strTest.substring(6));
+		// V.R. The cases strTest.substring(-10) and strTest.substring(99) are skipped
 		}
 
 	@Test
 	void testSubstringIntInt() {
 		assertEquals("Wo", strTest.substring(6, 8));
+		// V.R. The case strTest.substring(6, 99) is skipped
+		// V.R. The case strTest.substring(-2, 3) is skipped
 		}
 
 	@Test
