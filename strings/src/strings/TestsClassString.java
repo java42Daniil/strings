@@ -55,17 +55,20 @@ class TestsClassString {
 
 	@Test
 	void testIndexOfIntInt() {
+		//[YG] no tests for non-existing symbols
 		assertEquals(4, strTest.indexOf('o', 3 ));
 		}
 
 	@Test
 	void testLastIndexOfIntInt() {
+		//[YG] no tests for non-existing symbols
 		assertEquals(7, strTest.lastIndexOf('o', strTest.length()-1 ));
 		assertEquals(4,  strTest.lastIndexOf('o', 5));	
 		}
 
 	@Test
 	void testIndexOfString() {
+		//[YG] no tests for non-existing symbols
 		assertEquals(5, strTest.indexOf(" "));
 		assertEquals(8, strTest.indexOf("r"));	
 		}
