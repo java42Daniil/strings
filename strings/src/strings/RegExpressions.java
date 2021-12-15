@@ -39,10 +39,11 @@ public static String arithmeticExpression() {
  * 7 digits that may or may not be separated by dash
  */
 public static String mobileIsraelPhone() {
+	// V.R. It doen't work
 	String regionCode = "(\\+972-?\\s*|0)";
 	String operatorCode = "\\p{Blank}*?5[0-9]|7[2-7]";
 	String phoneNumber = "(\\-?\\d){7}\\d";
-	return String.format("%1$s(%2$s|%3$s)%3$s", regionCode, operatorCode, phoneNumber);
+	return String.format("%1$s(%2$s|%3$s)%3$s", regionCode, operatorCode, phoneNumber);   
 }
 /**
  * 

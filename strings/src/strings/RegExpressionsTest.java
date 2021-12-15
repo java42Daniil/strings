@@ -106,6 +106,10 @@ import static strings.RegExpressions.*
 		//code operator 050, 051, 052, 053, 054, 055,056,057,058, 059
 		//code operator 072 - 077
 		//7 digits that may or may not be separated by dash
+		/* V.R. True tests are commented.
+		 *  That is why you don't see that mobileIsraelPhone()
+		 *   doen't work
+		 */
 //		assertTrue("+972-541234567".matches(mobileIsraelPhone()));
 //		assertTrue("0541234567".matches(mobileIsraelPhone()));
 //		assertTrue("074-1-2345-67".matches(mobileIsraelPhone()));
@@ -131,12 +135,15 @@ import static strings.RegExpressions.*
 		String actual = getStringWithoutSpaces(expr);
 		String expected = "20+10*2/100+4";
 		assertEquals(expected, actual);
+		/* V.R. The method replaceAll() throws exception of type
+		 * PatternSyntaxException. It is necessary to test the case with exception
+		 */
 		
 	}
 
 	private String getStringWithoutSpaces(String str) {
 		// TODO write this method based on the method replaceAll of the class String
-		return str.replaceAll("\\s+", "");
+		return str.replaceAll("\\s+", "");   
 	}
 	@Test
 	void splitTest () {
@@ -145,6 +152,9 @@ import static strings.RegExpressions.*
 		assertArrayEquals(operatorsExp, getOperatorsExpression(expr));
 		String [] operandsExp = {"20", "10", "2", "100", "4"};
 		assertArrayEquals(operandsExp, getOperandsExpression(expr));
+		/* V.R. The method split() throws exception of type
+		 * PatternSyntaxException. It is necessary to test the case with exception
+		 */
 	}
 
 	private String[] getOperandsExpression(String expr) {
